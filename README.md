@@ -1,5 +1,7 @@
 # Entrega Pagina web con llamados a API - PokeApi
 
+## Vista al trabajo
+Despliegue en el siguiente link: https://pokecard-abi.netlify.app/
 ## Api usada
 - api: [pokeapi](https://pokeapi.co/)
 - endpoint base: `https://pokeapi.co/api/v2/pokemon/`
