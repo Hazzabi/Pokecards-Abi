@@ -1,0 +1,254 @@
+@font-face {
+  font-family: "PokemonSolid";
+  src: url("assets/Pokemon Solid.ttf") format("truetype");
+}
+
+/* variables basicas de color */
+:root {
+  --color-fondo-1: #fde9f7;
+  --color-fondo-2: #f4ddff;
+  --color-fondo-3: #efd4fb;
+  --color-panel: rgba(255, 245, 252, 0.9);
+  --color-borde: #d8b5e8;
+  --color-texto: #5a2d73;
+  --color-secundario: #7b4c96;
+  --color-titulo: #8e2fb1;
+}
+
+/* reset minimo */
+* {
+  box-sizing: border-box;
+}
+
+/* estilo general de la pagina */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--color-texto);
+  background: radial-gradient(circle at 10% 10%, #ffeaf8 0%, transparent 45%),
+    radial-gradient(circle at 90% 15%, #f1ddff 0%, transparent 42%),
+    linear-gradient(145deg, var(--color-fondo-1) 0%, var(--color-fondo-2) 50%, var(--color-fondo-3) 100%);
+  min-height: 100vh;
+}
+
+/* bloque principal de la web */
+.contenedor-principal {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 16px 16px 34px;
+}
+
+.titulo-principal {
+  margin: 8px 0 18px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "PokemonSolid";
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: #ce81a5;
+  text-shadow: 2px 2px 0 #49022b;
+}
+/* rejilla para las 12 cartas */
+.rejilla-cartas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* estilo base de cada carta */
+.carta-pokemon {
+  background: linear-gradient(180deg, var(--color-carta-fondo-1) 0%, var(--color-carta-fondo-2) 100%);
+  border: 2px solid var(--color-carta-borde);
+  border-radius: 22px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(130, 70, 160, 0.16);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 430px;
+}
+
+.carta-pokemon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(130, 70, 160, 0.22);
+}
+
+.encabezado-carta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  border: 2px solid var(--color-carta-borde);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.nombre-pokemon {
+  margin: 0;
+  font-size: 1.12rem;
+  color: var(--color-carta-titulo);
+  text-transform: capitalize;
+}
+
+.hp-pokemon {
+  font-weight: 700;
+  color: var(--color-carta-numero);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+}
+
+.linea-tipos {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 7px 0;
+}
+
+.chip-tipo {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid var(--color-carta-borde);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--color-carta-texto);
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+
+.marco-imagen {
+  border: 2px solid var(--color-carta-marco);
+  border-radius: 13px;
+  background: linear-gradient(145deg, #fffaff, #f7ecff);
+  padding: 7px;
+}
+
+.imagen-pokemon {
+  width: 100%;
+  max-width: 140px;
+  margin: 0 auto;
+  display: block;
+}
+
+.info-basica {
+  margin: 8px 0 7px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-carta-texto);
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.bloque-ataques {
+  border: 2px solid var(--color-carta-borde);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 6px 8px;
+}
+
+.titulo-bloque {
+  margin: 0 0 5px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.72rem;
+  color: var(--color-carta-titulo);
+  letter-spacing: 0.6px;
+}
+
+.fila-ataque {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.fila-ataque:first-of-type {
+  border-top: none;
+}
+
+.nombre-ataque {
+  text-transform: capitalize;
+  color: var(--color-carta-texto);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.poder-ataque {
+  min-width: 30px;
+  text-align: right;
+  font-weight: 800;
+  color: var(--color-carta-titulo);
+}
+
+.bloque-stats {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.mini-dato {
+  border: 1px solid var(--color-carta-borde);
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 9px;
+  text-align: center;
+  padding: 4px 3px;
+}
+
+.mini-etiqueta {
+  display: block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-carta-texto);
+}
+
+.mini-valor {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--color-carta-titulo);
+}
+
+.pie-carta {
+  margin-top: 8px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.14);
+  padding-top: 4px;
+}
+
+.dato-pokemon {
+  margin: 4px 0 0;
+  color: var(--color-carta-texto);
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
+.etiqueta-dato {
+  font-weight: 700;
+  color: var(--color-carta-titulo);
+}
+
+/* paleta pastel por tipo */
+.tipo-normal { --color-carta-fondo-1: #f8f4ea; --color-carta-fondo-2: #f3ecd9; --color-carta-borde: #d7cbac; --color-carta-texto: #6f654f; --color-carta-titulo: #7b6d53; --color-carta-numero: #8c7e63; --color-carta-marco: #d8ccb0; }
+.tipo-fuego { --color-carta-fondo-1: #fff0e8; --color-carta-fondo-2: #ffdccc; --color-carta-borde: #f3b08c; --color-carta-texto: #874a2f; --color-carta-titulo: #a34f26; --color-carta-numero: #b9653d; --color-carta-marco: #f2be9e; }
+.tipo-agua { --color-carta-fondo-1: #ecf6ff; --color-carta-fondo-2: #d7ebff; --color-carta-borde: #a8caeb; --color-carta-texto: #3d5f85; --color-carta-titulo: #2f5c95; --color-carta-numero: #4f77a8; --color-carta-marco: #b8d5ef; }
+.tipo-planta { --color-carta-fondo-1: #effbeb; --color-carta-fondo-2: #dcf3d6; --color-carta-borde: #acd2a3; --color-carta-texto: #456744; --color-carta-titulo: #3b7740; --color-carta-numero: #57905b; --color-carta-marco: #bddcb6; }
+.tipo-electrico { --color-carta-fondo-1: #fff9e6; --color-carta-fondo-2: #fff0c9; --color-carta-borde: #e9d28a; --color-carta-texto: #756335; --color-carta-titulo: #9b7f20; --color-carta-numero: #b2902f; --color-carta-marco: #ead89f; }
+.tipo-hielo { --color-carta-fondo-1: #effdff; --color-carta-fondo-2: #dbf5fa; --color-carta-borde: #abd7e3; --color-carta-texto: #3f6673; --color-carta-titulo: #3b7d92; --color-carta-numero: #5893a6; --color-carta-marco: #bce0e8; }
+.tipo-lucha { --color-carta-fondo-1: #fff0ee; --color-carta-fondo-2: #ffdcd7; --color-carta-borde: #e7b0a8; --color-carta-texto: #7a4c47; --color-carta-titulo: #9a4e49; --color-carta-numero: #b06862; --color-carta-marco: #ebc0bb; }
+.tipo-veneno { --color-carta-fondo-1: #f7ecff; --color-carta-fondo-2: #ecd9ff; --color-carta-borde: #c5a8e8; --color-carta-texto: #604a7d; --color-carta-titulo: #7348a4; --color-carta-numero: #8b63ba; --color-carta-marco: #d0bae9; }
+.tipo-tierra { --color-carta-fondo-1: #faf2e9; --color-carta-fondo-2: #efdfcc; --color-carta-borde: #d3b998; --color-carta-texto: #725b45; --color-carta-titulo: #8a6038; --color-carta-numero: #a3774b; --color-carta-marco: #dcc4a8; }
+.tipo-volador { --color-carta-fondo-1: #f0f2ff; --color-carta-fondo-2: #e1e5ff; --color-carta-borde: #bcc3ef; --color-carta-texto: #545b85; --color-carta-titulo: #525ea0; --color-carta-numero: #6e76b3; --color-carta-marco: #ccd1f2; }
+.tipo-psiquico { --color-carta-fondo-1: #ffeef7; --color-carta-fondo-2: #ffd9ec; --color-carta-borde: #e5aac8; --color-carta-texto: #7c4a67; --color-carta-titulo: #a24b7c; --color-carta-numero: #b96592; --color-carta-marco: #ebc0d8; }
+.tipo-bicho { --color-carta-fondo-1: #f5fae7; --color-carta-fondo-2: #e9f1cf; --color-carta-borde: #c7d99a; --color-carta-texto: #607142; --color-carta-titulo: #738b35; --color-carta-numero: #8ca54d; --color-carta-marco: #d3e0ad; }
+.tipo-roca { --color-carta-fondo-1: #f5f0e8; --color-carta-fondo-2: #e9e0d2; --color-carta-borde: #cdbda4; --color-carta-texto: #6a5f51; --color-carta-titulo: #756650; --color-carta-numero: #8a7a62; --color-carta-marco: #d7cab6; }
+.tipo-fantasma { --color-carta-fondo-1: #f3ecff; --color-carta-fondo-2: #e8dbfb; --color-carta-borde: #c3b0e0; --color-carta-texto: #5d4f79; --color-carta-titulo: #694f8f; --color-carta-numero: #8166a8; --color-carta-marco: #d0c0e7; }
+.tipo-dragon { --color-carta-fondo-1: #efeeff; --color-carta-fondo-2: #dfddff; --color-carta-borde: #b8b5eb; --color-carta-texto: #4f4d7b; --color-carta-titulo: #4f5099; --color-carta-numero: #686ab0; --color-carta-marco: #c8c6ef; }
+.tipo-siniestro { --color-carta-fondo-1: #f1eded; --color-carta-fondo-2: #e5dfdf; --color-carta-borde: #c2b4b4; --color-carta-texto: #5f5454; --color-carta-titulo: #6e5757; --color-carta-numero: #816868; --color-carta-marco: #cec3c3; }
+.tipo-acero { --color-carta-fondo-1: #eef4f8; --color-carta-fondo-2: #dfe9ef; --color-carta-borde: #b8c9d3; --color-carta-texto: #4f6876; --color-carta-titulo: #4e7388; --color-carta-numero: #67889c; --color-carta-marco: #c8d7de; }
+.tipo-hada { --color-carta-fondo-1: #fff0fa; --color-carta-fondo-2: #ffe0f2; --color-carta-borde: #e8b8d5; --color-carta-texto: #7b4d6a; --color-carta-titulo: #a3467b; --color-carta-numero: #bb6192; --color-carta-marco: #ecc7de; }
+
+
+
